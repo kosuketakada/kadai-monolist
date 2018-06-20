@@ -29,7 +29,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('want', 'ItemUserController@dont_want')->name('item_user.dont_want');
     Route::resource('users', 'UsersController', ['only' => ['show']]);
     
-     Route::post('have', 'ItemUserController@have')->name('item_user.have');
+    Route::post('have', 'ItemUserController@have')->name('item_user.have');
     Route::delete('have', 'ItemUserController@dont_have')->name('item_user.dont_have');
+    
+    Route::get('ranking/want', 'RankingController@want')->name('ranking.want');
+    Route::get('ranking/have', 'RankingController@have')->name('ranking.have');
+    
+    
     
 });
